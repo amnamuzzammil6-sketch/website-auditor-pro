@@ -278,3 +278,93 @@ body {
   font-size: 1rem;
   margin-top: 20px;
 }
+/* Smooth transition for the gauges */
+.gauge-item {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer; /* Makes it feel interactive when recording */
+  will-change: transform, filter; /* Pro optimization for smooth animations */
+}
+
+/* The Hover Effect: Pops up and adds a glowing shine */
+.gauge-item:hover {
+  transform: translateY(-8px) scale(1.05);
+  filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.4));
+}
+/* =========================================
+   PRO HOVER EFFECTS & MICRO-INTERACTIONS 
+   ========================================= */
+
+/* 1. Input Fields (When hovering and typing) */
+.input-field {
+  transition: all 0.3s ease;
+  cursor: text; /* Ensures it shows the typing cursor */
+}
+
+.input-field:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #10b981; /* Premium Emerald Green border */
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.3); /* Green glow when typing */
+  transform: translateY(-2px); /* Slight lift while typing */
+}
+
+/* 2. Primary Button (Run Audit) */
+.btn-primary {
+  transition: all 0.3s ease;
+  cursor: pointer; /* Turns mouse into a clicking hand */
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.5); /* Strong green glow */
+  filter: brightness(1.2);
+}
+
+/* 3. Secondary Button (Download PDF) */
+.btn-secondary {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2); /* Clean white/silver glow */
+  background-color: #3f3f46; /* Slightly lighter gray on hover */
+}
+
+/* 4. Disable hover effects while loading */
+.btn-primary:disabled {
+  cursor: wait; /* Shows the loading hourglass/spinner cursor */
+  transform: none;
+  box-shadow: none;
+}
+/* 5. Bottom Detail Boxes (Health, Insights, and Screenshots) */
+.health-card, 
+.insights-box,
+.screenshot-box {
+  transition: all 0.3s ease;
+  will-change: transform, box-shadow;
+  cursor: default; /* Keeps the normal arrow cursor since they aren't clickable links */
+}
+
+/* The Hover Effect */
+.health-card:hover, 
+.insights-box:hover,
+.screenshot-box:hover {
+  transform: translateY(-6px); /* Lifts the boxes up */
+  border-color: #10b981; /* Gives them a sleek green border highlight to match the theme */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6), 0 0 15px rgba(16, 185, 129, 0.15); /* Deep shadow + green neon glow */
+}
+
+/* Optional: Make the individual text list items in the insights box slightly interactive too */
+.insights-list li {
+  transition: color 0.2s ease;
+}
+
+.insights-list li:hover {
+  color: #10b981; /* Turns the text green when you hover over a specific issue */
+}
