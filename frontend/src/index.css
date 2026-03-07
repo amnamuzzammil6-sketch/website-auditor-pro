@@ -368,3 +368,47 @@ body {
 .insights-list li:hover {
   color: #10b981; /* Turns the text green when you hover over a specific issue */
 }
+/* =========================================
+   MOBILE RESPONSIVENESS (Phones & Tablets)
+   ========================================= */
+
+@media (max-width: 768px) {
+  /* Stack the two websites vertically instead of side-by-side */
+  .battle-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .result-col {
+    width: 100%; /* Take up full width on mobile */
+  }
+
+  /* Make gauges smaller and stack them if needed */
+  .gauges-row {
+    justify-content: space-around;
+    gap: 10px;
+  }
+
+  .gauge-item {
+    width: 70px; /* Smaller gauges for mobile screens */
+  }
+
+  /* Adjust fonts for smaller screens */
+  .main-title {
+    font-size: 1.8rem;
+  }
+
+  .sub-title {
+    font-size: 1rem;
+  }
+
+  /* Ensure the form doesn't overflow */
+  .form-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .input-field {
+    font-size: 14px;
+  }
+}
